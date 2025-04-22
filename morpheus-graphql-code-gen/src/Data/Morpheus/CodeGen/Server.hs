@@ -11,7 +11,6 @@ where
 import Data.ByteString.Lazy.Char8
   ( readFile,
   )
-import Data.FileEmbed (makeRelativeToProject)
 import Data.Morpheus.CodeGen.Server.Internal.AST
   ( CodeGenConfig (..),
   )
@@ -21,7 +20,8 @@ import Data.Morpheus.CodeGen.Server.Printing.TH
   )
 import Language.Haskell.TH (Dec, Q, runIO)
 import Language.Haskell.TH.Syntax
-  ( qAddDependentFile,
+  ( makeRelativeToProject,
+    qAddDependentFile
   )
 import Relude hiding (ByteString, readFile)
 
